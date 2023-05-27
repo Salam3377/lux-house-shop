@@ -29,7 +29,7 @@ export const listProducts = ( keyword = '') => async (dispatch) => {
     try{
         dispatch({ type: PRODUCT_LIST_REQUEST })
 
-        const { data } = await axios.get(`http://localhost:8000/api/products/${keyword}`)
+        const { data } = await axios.get(`/api/products/${keyword}`)
 
         dispatch({
             type: PRODUCT_LIST_SUCCESS,
@@ -52,7 +52,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     try{
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-        const { data } = await axios.get(`http://localhost:8000/api/products/${id}`)
+        const { data } = await axios.get(`/api/products/${id}`)
 
         dispatch({
             type: PRODUCT_DETAILS_SUCCESS,
@@ -89,7 +89,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.delete(
-            `http://localhost:8000/api/products/delete/${id}/`,
+            `/delete/${id}/`,
             config
         )
 
@@ -129,7 +129,7 @@ export const createProduct = () => async (dispatch, getState) => {
         }
 
         const { data } = await axios.post(
-            `http://localhost:8000/api/products/create/`,
+            `/api/products/create/`,
             {},
             config
         )
@@ -169,7 +169,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
         }
 
         const { data } = await axios.put(
-            `http://localhost:8000/api/products/update/${product._id}/`,
+            `/api/products/update/${product._id}/`,
             product,
             config
         )
