@@ -1,0 +1,15 @@
+#main-pic-div {    
+    margin-top: 30px;
+}
+#main-pic {
+    height: auto;
+    width: 100%;
+}
+
+.home-images {
+    margin: 1rem;
+    border-radius: 3%;
+    width: 45%;
+    max-height: 330px;
+    object-fit: cover;
+}

@@ -1,0 +1,15 @@
+#menu-img-div {
+    padding-top: 10px;
+    margin-top: 30px;
+    background-color: rgb(0, 0, 0);
+    padding-bottom: 10px;
+    
+}
+#menu-img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+#menu-img-div {
+    text-align: center;
+}

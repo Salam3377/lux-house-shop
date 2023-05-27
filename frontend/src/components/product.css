@@ -1,0 +1,9 @@
+#menu-add-btn {
+    border-color: transparent;
+    background-color: white;
+    border-radius: 10%;
+}
+#menu-add-btn:hover {
+    color: rgb(1, 33, 137);
+    background-color: rgb(233, 233, 250);
+}
