@@ -8,7 +8,7 @@
 #top2 {
     margin: auto;
     margin-top: 0;
-    width: 500px;
+    max-width: 500px;
     height: 500px;
     margin-bottom: 70px;
 }
@@ -20,7 +20,6 @@
 
 label {
     float: left;
-    padding-right: 24px;
 }
 
 #title {
@@ -45,4 +44,22 @@ textarea {
 }
 .text-input {
     background-color: rgb(243, 241, 236);
+}
+
+/* 992px */
+@media(max-width: 992px) {
+    #top-0 {
+        margin-top: 0px !important;
+    }
+    #title {
+        font-size: 20px !important;
+    }
+    #text {
+        font-size: 18px !important;
+    }
+}
+@media(max-width: 400px) {
+    #text {
+        height: 150px !important;
+    }
 }

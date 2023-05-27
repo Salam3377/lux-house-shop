@@ -34,10 +34,11 @@ function ProductScreen(props) {
         <Modal id='sign-in-modal' show={openModal} onHide={closeModal}>
         <Modal.Header id='modal-header' closeButton/>
         <h5 className="modal-header">quantity</h5>
-
+        {error && <Message variant='danger'>{error}</Message>}
+        {loading && <Loader />}
             <Modal.Body>
                
-                <Modal.Title as='div'><strong>Item: {product.name}</strong></Modal.Title>
+                <Modal.Title as='div'><strong> {product.name} </strong></Modal.Title>
                 <Image style={{
                     width: "100%" ,
                     maxWidth: "200px",
@@ -46,9 +47,7 @@ function ProductScreen(props) {
                     borderRadius: "5%"
                 }}
                 src={product.image} />
-
-                {error && <Message variant='danger'>{error}</Message>}
-                {loading && <Loader />}
+                <p>price: ${product.price}</p>
                 <Form onSubmit={addToCartHandler}>
                     <p style={{marginTop: "15px", marginBottom: "5px"}}>Update Quantity: </p>
                    <Form.Control className=''

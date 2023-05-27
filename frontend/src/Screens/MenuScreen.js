@@ -52,34 +52,34 @@ function MenuScreen() {
           marginTop: "30px",
           paddingBottom: "5px",
           paddingTop: "5px",
-          backgroundColor: "#2d2d2d",
-          color: "wheat"
+          backgroundColor: "black",
+          color: "white"
           }}>Menu</h1>
            
         <div>
           <Row>
-            <h3 style={{marginTop: "15px", borderTop: "1px solid black", paddingTop: "10px"}}>Breakfast</h3>
+            <h3 style={{marginTop: "50px", borderTop: "1px solid black", paddingTop: "10px", fontWeight: "bold"}}>Breakfast</h3>
               {breakfast.map(product =>   (
                     <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                       <Product product={product} />
                     </Col>
               ))}
 
-            <h3 style={{marginTop: "15px",paddingTop: "10px", borderTop: "1px solid black"}}>Lunch</h3>
+            <h3 style={{marginTop: "50px",paddingTop: "10px", borderTop: "1px solid black", fontWeight: "bold"}}>Lunch</h3>
               {lunch.map(product =>  (
                     <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                       <Product product={product} />
                     </Col>
               ))}
 
-            <h3 style={{marginTop: "15px",paddingTop: "10px", borderTop: "1px solid black"}}>Coffee and Tea</h3>
+            <h3 style={{marginTop: "50px",paddingTop: "10px", borderTop: "1px solid black", fontWeight: "bold"}}>Coffee and Tea</h3>
               {coffeeTea.map(product =>  (
                     <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                       <Product product={product} />
                     </Col>
               ))}
 
-            <h3 style={{marginTop: "15px",paddingTop: "10px", borderTop: "1px solid black"}}>Desserts</h3>
+            <h3 style={{marginTop: "50px",paddingTop: "10px", borderTop: "1px solid black", fontWeight: "bold"}}>Desserts</h3>
               {desserts.map(product => (
                     <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                       <Product product={product} />

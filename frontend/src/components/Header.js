@@ -48,7 +48,7 @@ function Header() {
 
   return (
     <div id='body-div'>
-        <Navbar style={{
+        <Navbar id='header-nav' style={{
             zIndex: "1",
             right:"5px",
             top:"-50px",
@@ -105,7 +105,7 @@ function Header() {
             </div>
         </div>
         
-        <Nav className='navbar' style={{ 
+        <Nav id='menu-nav' className='navbar' style={{ 
             display: 'flex', 
             flexDirection: 'row',
             justifyContent: 'center', 

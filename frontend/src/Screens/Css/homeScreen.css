@@ -13,3 +13,9 @@
     max-height: 330px;
     object-fit: cover;
 }
+
+@media(max-width: 922px) {
+    #main-pic-div {    
+        margin-top: 0px !important;
+    }
+}
