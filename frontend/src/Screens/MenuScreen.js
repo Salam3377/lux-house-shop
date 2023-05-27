@@ -27,6 +27,9 @@ function MenuScreen() {
   }, [dispatch, keyword])
 
   products.forEach(product => {
+    if(!product) {
+      return
+    }
     if (product.category === 'breakfast') {
       breakfast.push(product);
     } else if (product.category === 'lunch') {
