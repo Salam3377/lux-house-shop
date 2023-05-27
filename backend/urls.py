@@ -23,12 +23,13 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('', TemplateView.as_view(template_name='index.html')),
     path('login', TemplateView.as_view(template_name='index.html')),
+    path('signup', TemplateView.as_view(template_name='index.html')),
     path('profile', TemplateView.as_view(template_name='index.html')),
     path('menu', TemplateView.as_view(template_name='index.html')),
     path('product/<str:pk>', TemplateView.as_view(template_name='index.html')),
     path('about', TemplateView.as_view(template_name='index.html')),
     path('contact', TemplateView.as_view(template_name='index.html')),
-    path('signup', TemplateView.as_view(template_name='index.html')),
+    
     path('cart/<str:pk>', TemplateView.as_view(template_name='index.html')),
     path('cart', TemplateView.as_view(template_name='index.html')),
     path('paymentDelivery', TemplateView.as_view(template_name='index.html')),
