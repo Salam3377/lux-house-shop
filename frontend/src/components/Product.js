@@ -21,7 +21,7 @@ function Product({ product }) {
       <Card.Body>
           
         <Card.Title as="div">
-            <strong>{product.name}</strong>
+            <strong style={{fontSize: "20px", fontWeight: "bold", }}>{product.name}</strong>
         </Card.Title>
 
         <Card.Img style={{
