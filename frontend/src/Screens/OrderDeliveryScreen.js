@@ -99,7 +99,7 @@ function OrderDeliveryScreen() {
                                 <ListGroup.Item>
                                     <h2>Delivery</h2>
                                     <p><strong>Name: </strong> {order.user.name}</p>
-                                    <p><strong>Email: </strong><a href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
+                                    <p><strong>Email: </strong> {order.user.email}</p>
                                     <p>
                                         <strong>Address: </strong>
                                         {order.deliveryAddress.address},  {order.deliveryAddress.city}
@@ -123,7 +123,7 @@ function OrderDeliveryScreen() {
                                                             </Col>
 
                                                             <Col>
-                                                                <Link to={`/product/${item.product}`}>{item.name}</Link>
+                                                               {item.name}
                                                             </Col>
 
                                                             <Col md={4}>
