@@ -23,7 +23,7 @@ function PlaceOrderDelivery() {
     const cart = useSelector(state => state.cart)
 
     cart.itemsPrice = cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2)
-    cart.deliveryPrice = (cart.itemsPrice > 100 ? 0 : 5).toFixed(2)
+    cart.deliveryPrice = (cart.itemsPrice > 15 ? 0 : 3).toFixed(2)
     cart.taxPrice = Number((0.082) * cart.itemsPrice).toFixed(2)
 
     cart.totalPrice = (Number(cart.itemsPrice) + Number(cart.deliveryPrice) + Number(cart.taxPrice)).toFixed(2)
@@ -68,12 +68,12 @@ function PlaceOrderDelivery() {
                             <h2>Delivery</h2>
 
                             <p>
-                                <strong>Shipping: </strong>
+                                <strong>Address: </strong>
                                 {cart.deliveryAddress.address},  {cart.deliveryAddress.city}
                                 {'  '}
-                                {cart.deliveryAddress.postalCode},
+                                {cart.deliveryAddress.postalCode}
                                 {'  '}
-                                {cart.deliveryAddress.country}
+                                
                             </p>
                         </ListGroup.Item>
 
@@ -132,7 +132,7 @@ function PlaceOrderDelivery() {
 
                             <ListGroup.Item>
                                 <Row>
-                                    <Col>Shipping:</Col>
+                                    <Col>Delivery fee:</Col>
                                     <Col>${cart.deliveryPrice}</Col>
                                 </Row>
                             </ListGroup.Item>

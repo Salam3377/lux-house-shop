@@ -87,6 +87,12 @@ function OrderDeliveryScreen() {
                 <div>
                     <NavbarComponent />
                     <h1>Order: {order._id}</h1>
+                    {order.isPaid && (
+                                <Message variant='success'>Thank You! Estimate Delivery Time: 
+                                {order.totalPrice <= 20 ? ' 25min' :
+                                order.totalPrice >= 50 ? ' 45min' : ' 35min'}
+                                </Message>
+                                )}
                     <Row>
                         <Col md={8}>
                             <ListGroup variant='flush'>
@@ -95,32 +101,12 @@ function OrderDeliveryScreen() {
                                     <p><strong>Name: </strong> {order.user.name}</p>
                                     <p><strong>Email: </strong><a href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
                                     <p>
-                                        <strong>Shipping: </strong>
+                                        <strong>Address: </strong>
                                         {order.deliveryAddress.address},  {order.deliveryAddress.city}
                                         {'  '}
-                                        {order.deliveryAddress.postalCode},
+                                        {order.deliveryAddress.postalCode}
                                         {'  '}
                                     </p>
-
-                                    {order.isDelivered ? (
-                                        <Message variant='success'>Delivered on {order.deliveredAt}</Message>
-                                    ) : (
-                                            <Message variant='warning'>Not Delivered</Message>
-                                        )}
-                                </ListGroup.Item>
-
-                                <ListGroup.Item>
-                                    <h2>Payment Method</h2>
-                                    <p>
-                                        <strong>Method: </strong>
-                                        {order.paymentMethod}
-                                    </p>
-                                    {order.isPaid ? (
-                                        <Message variant='success'>Paid on {order.paidAt}</Message>
-                                    ) : (
-                                            <Message variant='warning'>Not Paid</Message>
-                                        )}
-
                                 </ListGroup.Item>
 
                                 <ListGroup.Item>
@@ -149,6 +135,9 @@ function OrderDeliveryScreen() {
                                             </ListGroup>
                                         )}
                                 </ListGroup.Item>
+                                {!order.isPaid && (
+                                        <Message variant='warning'>Not Paid</Message>
+                                    )}
 
                             </ListGroup>
 
@@ -170,7 +159,7 @@ function OrderDeliveryScreen() {
 
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Shipping:</Col>
+                                            <Col>Delivery Fee:</Col>
                                             <Col>${order.deliveryPrice}</Col>
                                         </Row>
                                     </ListGroup.Item>
@@ -206,16 +195,8 @@ function OrderDeliveryScreen() {
                                     )}
                                 </ListGroup>
                                 {loadingDeliver && <Loader />}
-                                {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
-                                    <ListGroup.Item>
-                                        <Button
-                                            type='button'
-                                            className='col-12'
-                                            onClick={deliverHandler}
-                                        >
-                                            Mark As Delivered
-                                        </Button>
-                                    </ListGroup.Item>
+                                {userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && ( 
+                                        <Message variant='success'>Paid on {order.paidAt}</Message>
                                 )}
                             </Card>
                         </Col>

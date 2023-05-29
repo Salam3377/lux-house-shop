@@ -35,7 +35,7 @@ export const cartReducer = ( state={ cartItems:[] }, action ) => {
         case CART_SAVE_DELIVERY_ADDRESS:
             return {
                 ...state,
-                shippingAddress: action.payload
+                deliveryAddress: action.payload
             }
         
         case CART_SAVE_PAYMENT_METHOD:
