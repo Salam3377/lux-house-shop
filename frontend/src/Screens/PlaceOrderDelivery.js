@@ -99,7 +99,7 @@ function PlaceOrderDelivery() {
                                                     </Col>
 
                                                     <Col>
-                                                        <Link to={`/product/${item.product}`}>{item.name}</Link>
+                                                        {item.name}
                                                     </Col>
 
                                                     <Col md={4}>
